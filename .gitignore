@@ -1,0 +1,12 @@
+# Local assessment working files that are not part of the public submission.
+CONTINUATION-HANDOFF.md
+FINALIZATION-HANDOFF.md
+HANDOFF.md
+brief.md
+plan.md
+figma/
+deployments/cloud-run/
+
+# Local packaging and OS artifacts.
+*.zip
+.DS_Store
