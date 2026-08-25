@@ -23,6 +23,19 @@ The property archive uses the main WordPress query plus `pre_get_posts` for filt
 
 The theme activation hook creates a small editable demo data set and configures the required pages and front page. This makes a fresh WordPress installation reviewable without a manual content-import step.
 
+## Plugins and tools used
+
+**WordPress plugins:** no assessment-specific plugin is required. There is intentionally no custom plugin file or `plugins/` directory in this repository. The functionality that belongs to this assessment theme is implemented with native WordPress APIs in `wordpress/theme/functions.php`.
+
+- **ACF:** not used. Property fields use native WordPress post meta because the field set is small and does not need an extra dependency.
+- **Contact-form plugin:** not used. Contact inquiries, property inquiries, and newsletter signups use WordPress `admin-post.php`, nonce validation, sanitization, email validation, and a private `estatein_inquiry` post type for persistence.
+- **CPT plugin:** not used. The `estatein_property` and `estatein_inquiry` post types are registered by the theme.
+- **Page builder:** not used. The six required pages are normal WordPress templates in the custom theme.
+
+**Development and review tools:** the supplied Figma Community design was the visual reference; Chrome/DevTools was used for responsive and interaction verification; `php -l` and `node --check` were used for syntax validation; Git and GitHub provide source control; and Wasmer provides the final free WordPress hosting environment.
+
+This keeps the submission self-contained: activating the theme is sufficient for the assessment features, without requiring a reviewer to install or configure additional plugins.
+
 ## Responsive and Figma implementation
 
 The implementation follows the desktop, laptop, and mobile Figma frames rather than scaling one desktop layout proportionally. The main reference widths are 1920 px, 1440 px, and 390 px. Shared components use responsive CSS, while page-specific geometry is scoped to the relevant template so a correction on one page does not change previously validated pages.
